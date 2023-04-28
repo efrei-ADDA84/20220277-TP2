@@ -89,7 +89,7 @@ Ensuite nous pouvons tester la méthode `GET` sur notre API en passant la longit
 
 - Test de l'image depuis DockerHub
 ```
-$ docker run -p 8081:8081 --env API_KEY="VOTRE-API-KEY" anicetdevops/weatherapi:0.0.1  
+$ docker run -p 8081:8081 --env API_KEY="VOTRE-API-KEY" yuourregistry/weatherapi:0.0.1  
 ```
 Ensuite nous pouvons tester la méthode `GET` sur notre API en passant la longitude et la latitude en paramètre de l'API comme suit : `http://127.0.0.1:8081/weather?lat=5.902785&lon=102.754175`.
 
