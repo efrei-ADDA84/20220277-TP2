@@ -23,7 +23,6 @@ def get_weather():
 
 def get_weather(API_KEY, LAT, LONG):
     # URL definition
-    print(API_KEY, LAT, LONG)
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LONG}&appid={API_KEY}"
 
     # HTTP request
@@ -34,7 +33,6 @@ def get_weather(API_KEY, LAT, LONG):
 
     # JSON response
     if response.status_code == 200:
-    # getting data in the json format
         return response.json()
     else:
         # showing the error message

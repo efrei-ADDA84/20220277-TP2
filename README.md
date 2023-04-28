@@ -78,4 +78,23 @@ Press CTRL+C to quit
 Notre API est donc accessible à l'adresse `http://127.0.0.1:8081`. Avec ce lien, nous allons pour pouvoir tester la méthode `GET` sur notre API en passant la longitude et la latitude en paramètre de l'API comme suit : `http://127.0.0.1:8081/weather?lat=5.902785&long=102.754175`.
 
 > ### 3. Publier automatiquement a chaque push sur Docker Hub
+Cete est réalisé automatiquement lorsqu'on fait un push sur GitHub car nous avons déjà configuré le workflow Github Action.
 
+> ### 4. Tester l'API
+- Test sur l'image en local
+```
+$ docker run  --env API_KEY="VOTRE-API-KEY"  weatherapi:0.0.1
+```
+Ensuite nous pouvons tester la méthode `GET` sur notre API en passant la longitude et la latitude en paramètre de l'API comme suit : `http://127.0.0.1:8081/weather?lat=5.902785&long=102.754175`.
+
+- Test de l'image depuis DockerHub
+```
+$ docker run -p 8081:8081 --env API_KEY="VOTRE-API-KEY" anicetdevops/weatherapi:0.0.1  
+```
+Ensuite nous pouvons tester la méthode `GET` sur notre API en passant la longitude et la latitude en paramètre de l'API comme suit : `http://127.0.0.1:8081/weather?lat=5.902785&long=102.754175`.
+
+>
+> Etudiant: AGBONON EDAGBDJI Yao Anicey \
+> Promo: BDML 2024 \
+> Email: yao-anicet.agbonon-edagbedji@efrei.net
+>
