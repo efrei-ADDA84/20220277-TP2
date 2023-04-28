@@ -54,3 +54,28 @@ Cette configuration permet de:
 À la fin de la configuration, le workflow Github Action est disponible sur Github après push et biensûr paramétrage des `secrets` utilisés. Si les secrets ne sont pas paramétrés, vous aurez une erreur d'éxécution.
 
 > ### 2. Transmation de notre wrapper Weather en API
+Pour se faire noous allons utiliser `Flask` pour transformer notre code en API. 
+- Installer flask
+- Créer un fichier `main.py`
+- Faire les importations
+- Définir la méthode qui renvoie le résultat avec l'annotation `@app.run()`
+- Définir la méthode qui renvoie le résultat avec l'annotation `@app.route('/weather')`
+- ***(ACTION OPTIONNELLE)*** Vous pouvez préciser la méthode `GET` mais c'est elle qui est prise par défaut.
+
+Une fois notre code prêt, nous pouvons tester en démarrant le serveur avec l'API_KEY en paramatres.
+> $ API_KEY="VOTRE-API-KEY" python main.py \
+
+Lorsque le serveur tourne sans erreur, nous aurez un résultat comme suit:
+````
+* Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8081
+ * Running on http://10.3.200.190:8081
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 770-403-475
+````
+Notre API est donc accessible à l'adresse `http://127.0.0.1:8081`. Avec ce lien, nous allons pour pouvoir tester la méthode `GET` sur notre API en passant la longitude et la latitude en paramètre de l'API comme suit : `http://127.0.0.1:8081/weather?lat=5.902785&long=102.754175`.
+
+> ### 3. Publier automatiquement a chaque push sur Docker Hub
+

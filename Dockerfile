@@ -1,7 +1,7 @@
 FROM python:3.11.0
 
 # set the working directory in the container
-WORKDIR /weather-app
+WORKDIR /weather-api
 
 # ADD all files 
 COPY . .
@@ -10,5 +10,5 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # command to run on container start
-CMD [ "python3", "weather.py" ]
+CMD [ "python3", "main.py" ]
 

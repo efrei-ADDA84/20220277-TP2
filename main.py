@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
 import requests
 import os
 
@@ -11,7 +11,7 @@ def get_weather():
     lat = request.args.get("lat", default=None, type=float)
     long = request.args.get("long", default=None, type=float)
 
-    if  lat is None or long is None:
+    if lat is None or long is None:
         print("--> Missing parameters")
 
     data = get_weather(api_key, lat, long)
