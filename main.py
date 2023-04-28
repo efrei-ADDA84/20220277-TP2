@@ -9,21 +9,21 @@ api_key = os.environ.get("API_KEY")
 @app.route("/weather", methods=["GET"])
 def get_weather():
     lat = request.args.get("lat", default=None, type=float)
-    long = request.args.get("long", default=None, type=float)
+    lon = request.args.get("lon", default=None, type=float)
 
-    if lat is None or long is None:
+    if lat is None or lon is None:
         print("--> Missing parameters")
 
-    data = get_weather(api_key, lat, long)
+    data = get_weather(api_key, lat, lon)
 
     if "error" in data:
         return data, 500
     else:
         return data
 
-def get_weather(API_KEY, LAT, LONG):
+def get_weather(API_KEY, LAT, LON):
     # URL definition
-    url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LONG}&appid={API_KEY}"
+    url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={API_KEY}"
 
     # HTTP request
     try:
